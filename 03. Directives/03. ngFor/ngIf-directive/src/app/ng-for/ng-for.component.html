@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>This is Test For ngFor Directive</h1>
+    <br>
+    <br>
+    <br>
+    <label>Enter the Server You want to Start</label>
+    <input class="form-control" type="text" [(ngModel)] = "serverName">
+    <button class="btn btn-primary" 
+            (click)="onClickMethod()"> 
+            Start Server
+    </button>
+
+        <!--  this is how you declare Normal ngFor -->
+
+        <!--  <h3 *ngFor = "let val of listOfServers" >  {{serverMessage}}  </h3> -->
+         
+
+
+
+         <!-- we can Extract the index of Collection or Array using ngFor as shown below: -->
+         <div *ngFor = "let val of listOfServers ; let i = index " >
+                
+                <h3 *ngIf =" i <= 5">{{serverMessage}}</h3>
+        
+        </div>
+</div>

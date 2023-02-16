@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>This is Test For ngIF Directive</h1>
+    <br>
+    <br>
+    
+        <h3 *ngIf = "serverOn; else performElse">{{serverMessage}}</h3>
+        <ng-template #performElse>There is No Server Present! </ng-template> 
+   
+    <!-- 
+        <h3 *ngIf = "serverOn" > {{serverMessage}} </h3>
+        <h3 *ngIf = "!serverOn" >There is No Server Present! </h3> 
+    -->
+    <br>
+    <label>Enter the Server You want to Start</label>
+    <input class="form-control" type="text" [(ngModel)] = "serverName">
+    <button class="btn btn-primary" 
+            (click)="onClickMethod()"
+            > Start Server</button>
+</div>
