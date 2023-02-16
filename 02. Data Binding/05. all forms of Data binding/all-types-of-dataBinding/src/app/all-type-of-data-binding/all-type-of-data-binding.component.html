@@ -1,0 +1,16 @@
+<div class="container">
+
+    <h1 style="font-style: italic;" > {{serverStatus}} </h1>
+    <br>
+    <br>
+    <br>
+    <input type="text" class="form-control" [(ngModel)] = "textBoxMessage" >
+
+
+    <button class="btn btn-primary" 
+            [disabled]="buttonStatus"
+            (click)="onClickMethod()">
+
+            Start Server 
+        </button>
+</div>
