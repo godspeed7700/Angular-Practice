@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-xs-12">
+      <p>Add new Servers or blueprints!</p>
+
+      <label>Server Name</label>
+      <input type="text" 
+              class="form-control" 
+               #inputVariableForServerName>  <!-- this is how you define Local Variable using "#variable_name" -->
+      
+      <label>Server Content</label>
+      <input  type="text" 
+              class="form-control" 
+              #inputVariableForServerContent>
+      
+      <br>
+
+      <!-- this is how we use these variables as parameter to 
+            pass it as parameter to method which is in .ts file
+        IMP NOTE: Local Variable only works in Template(HTML File) -->
+      <button
+        class="btn btn-primary"
+        (click)="onAddServer( inputVariableForServerName, inputVariableForServerContent )" >Add Server</button>
+        
+      <button
+        class="btn btn-primary"
+        (click)="onAddBlueprint( inputVariableForServerName, inputVariableForServerContent )">
+            
+          Add Server Blueprint
+          
+      </button>
+    </div>
+  </div>

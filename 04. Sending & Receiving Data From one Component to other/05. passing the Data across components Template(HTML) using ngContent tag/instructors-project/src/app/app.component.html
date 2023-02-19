@@ -1,0 +1,38 @@
+<div class="container">
+  <app-cockpit (addServerObject)="addServerToList($event)"
+                (addBluePrintObject)="addBluePrintToList($event)"
+  >
+  </app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">  
+      <!-- 
+          here we are looping through array and Binding that object 
+          to "displayElement" (which is Alias of "element" from server-element.component.ts)
+          using property binding. 
+      -->
+      <app-server-element 
+          *ngFor="let serverElement of serverElements"
+          [displayElement]="serverElement"> 
+
+          <!-- 
+            we added logic which was inside server-element.component.html to app.component.html file 
+            and put it inside <app-server-element> openning and closing tag
+            and need to change "element.type" to "serverElement.type" to
+            access the data from for loops variable & the <ng-content> tag in server-element.component.html file 
+            takes care of everything.
+          -->
+          <div class="panel-body">
+            <p>
+                <strong *ngIf="serverElement.type === 'server'" style="color: red">
+                    {{ serverElement.content }}  
+                </strong>
+                       
+                <em *ngIf="serverElement.type === 'blueprint'" style="color: blue">
+                    {{ serverElement.content }}  
+                </em>         
+            </p>        
+          </div>
+      </app-server-element>
+  </div>
+</div>

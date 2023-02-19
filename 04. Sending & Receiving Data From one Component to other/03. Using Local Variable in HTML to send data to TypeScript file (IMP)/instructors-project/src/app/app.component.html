@@ -1,0 +1,25 @@
+<div class="container">
+
+  <app-cockpit (addServerObject)="addServerToList($event)"
+                (addBluePrintObject)="addBluePrintToList($event)"
+  >
+  </app-cockpit>
+  
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      
+      
+      <app-server-element 
+          *ngFor="let serverElement of serverElements"
+          [displayElement]="serverElement"> 
+<!-- 
+  here we are looping through array and Binding that object 
+  to "displayElement" (which is Alias of "element" from server-element.component.ts)
+  using property binding. 
+-->
+
+      </app-server-element>
+    
+  </div>
+</div>
